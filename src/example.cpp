@@ -22,6 +22,10 @@ int mainWithRos(int argc, char** argv)
   logger->error("This is an error!");
   spdlog::info("This message is logged using the default logger");
 
+  RCLCPP_INFO(node->get_logger(), "This info is logged using ROS logging");
+  RCLCPP_ERROR(node->get_logger(), "This error is logged using ROS logging");
+
+
   return 0;
 }
 
