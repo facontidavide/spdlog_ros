@@ -17,20 +17,15 @@ int mainWithRos(int argc, char** argv)
 
   ros::Rate loop_rate(0.5);
 
-  while (ros::ok())
-  {
-    // Log some messages
-    logger->info("Hello, world!");
-    logger->warn("This is a warning!");
-    logger->error("This is an error!");
-    spdlog::info("This message is logged using the default logger");
+  // Log some messages
+  logger->info("Hello, world!");
+  logger->warn("This is a warning!");
+  logger->error("This is an error!");
+  spdlog::info("This message is logged using the default logger");
 
-    ROS_INFO("This info is logged using ROS logging");
-    ROS_ERROR("This error is logged using ROS logging");
-    ros::spinOnce();
+  ROS_INFO("This info is logged using ROS logging");
+  ROS_ERROR("This error is logged using ROS logging");
 
-    loop_rate.sleep();
-  }
   return 0;
 }
 
