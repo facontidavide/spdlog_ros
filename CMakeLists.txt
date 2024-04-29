@@ -45,8 +45,12 @@ if ( ament_cmake_FOUND )
   install(TARGETS
   ${PROJECT_NAME}
   example_ros2
-  DESTINATION lib/${PROJECT_NAME}
-)
+  DESTINATION lib/${PROJECT_NAME})
+
+  ament_export_dependencies(spdlog_vendor rclcpp rcl_interfaces)
+  # ament_export_include_directories(include)  
+  # ament_export_libraries(${PROJECT_NAME})
+  ament_package()
 
 else()
   add_definitions( -DUSING_ROS )
